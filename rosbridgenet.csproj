@@ -69,6 +69,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Messages\Message.cs" />
+    <Compile Include="Messages\Std\Byte.cs" />
+    <Compile Include="Messages\Std\Bool.cs" />
+    <Compile Include="Messages\Std\ByteMultiArray.cs" />
+    <Compile Include="Messages\Std\Char.cs" />
+    <Compile Include="Messages\Std\ColorRGBA.cs" />
+    <Compile Include="Messages\Std\Header.cs" />
+    <Compile Include="Messages\Std\UInt16MultiArray.cs" />
+    <Compile Include="Messages\Std\UInt32MultiArray.cs" />
+    <Compile Include="Messages\Std\UInt64MultiArray.cs" />
+    <Compile Include="Messages\Std\UInt8MultiArray.cs" />
+    <Compile Include="Messages\Std\Int8MultiArray.cs" />
+    <Compile Include="Messages\Std\Int64MultiArray.cs" />
+    <Compile Include="Messages\Std\Int32MultiArray.cs" />
+    <Compile Include="Messages\Std\Int16MultiArray.cs" />
+    <Compile Include="Messages\Std\Int8.cs" />
+    <Compile Include="Messages\Std\Int64.cs" />
+    <Compile Include="Messages\Std\Int32.cs" />
+    <Compile Include="Messages\Std\Int16.cs" />
+    <Compile Include="Messages\Std\String.cs" />
+    <Compile Include="Messages\Std\UInt64.cs" />
+    <Compile Include="Messages\Std\UInt32.cs" />
+    <Compile Include="Messages\Std\UInt8.cs" />
+    <Compile Include="Messages\Std\UInt16.cs" />
+    <Compile Include="Messages\Std\Time.cs" />
+    <Compile Include="Messages\Std\Duration.cs" />
+    <Compile Include="Messages\Std\Empty.cs" />
+    <Compile Include="Messages\Std\Float32.cs" />
+    <Compile Include="Messages\Std\Float32MultiArray.cs" />
+    <Compile Include="Messages\Std\Float64.cs" />
+    <Compile Include="Messages\Std\Float64MultiArray.cs" />
+    <Compile Include="Messages\Std\MultiArrayDimension.cs" />
+    <Compile Include="Messages\Std\MultiArrayLayout.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
