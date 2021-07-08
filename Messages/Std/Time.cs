@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
-namespace rosbridgenet.Messages.Std
+namespace Rosbridgenet.Messages.Std
 {
     public class Time : Message
     {
@@ -18,12 +13,10 @@ namespace rosbridgenet.Messages.Std
             get { return ROSMessageType; }
         }
 
-        [JsonIgnore]
-        [JsonPropertyName("secs")]
+        [JsonProperty("secs")]
         public uint Secs { get; set; }
 
-        [JsonIgnore]
-        [JsonPropertyName("nsecs")]
+        [JsonProperty("nsecs")]
         public uint NSecs { get; set; }
 
         public Time()

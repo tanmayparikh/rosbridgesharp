@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31424.327
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31423.177
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rosbridgenet", "rosbridgenet.csproj", "{53B2EEDF-2E9B-4129-AE8B-19267DCDD325}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rosbridgenet", "Rosbridgenet.csproj", "{53B2EEDF-2E9B-4129-AE8B-19267DCDD325}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

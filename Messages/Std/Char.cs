@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
-namespace rosbridgenet.Messages.Std
+namespace Rosbridgenet.Messages.Std
 {
     public class Char : Message
     {
@@ -18,8 +13,7 @@ namespace rosbridgenet.Messages.Std
             get { return ROSMessageType; }
         }
 
-        [JsonIgnore]
-        [JsonPropertyName("data")]
+        [JsonProperty("data")]
         public char Data { get; set; }
 
         public Char()

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
 
-namespace rosbridgenet.Messages.Std
+namespace Rosbridgenet.Messages.Std
 {
     public class UInt8MultiArray : Message
     {
@@ -18,12 +13,10 @@ namespace rosbridgenet.Messages.Std
             get { return ROSMessageType; }
         }
 
-        [JsonInclude]
-        [JsonPropertyName("layout")]
+        [JsonProperty("layout")]
         public MultiArrayLayout Layout { get; set; }
 
-        [JsonInclude]
-        [JsonPropertyName("data")]
+        [JsonProperty("data")]
         public byte[] Data { get; set; }
 
         public UInt8MultiArray()

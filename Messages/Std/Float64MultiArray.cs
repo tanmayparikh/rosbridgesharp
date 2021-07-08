@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
-namespace rosbridgenet.Messages.Std
+namespace Rosbridgenet.Messages.Std
 {
     public class Float64MultiArray : Message
     {
@@ -18,12 +13,10 @@ namespace rosbridgenet.Messages.Std
             get { return ROSMessageType; }
         }
 
-        [JsonInclude]
-        [JsonPropertyName("layout")]
+        [JsonProperty("layout")]
         public MultiArrayLayout Layout { get; set; }
 
-        [JsonInclude]
-        [JsonPropertyName("data")]
+        [JsonProperty("data")]
         public double[] Data { get; set; }
 
         public Float64MultiArray()

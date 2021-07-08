@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
-namespace rosbridgenet.Messages.Std
+namespace Rosbridgenet.Messages.Std
 {
     public class ColorRGBA : Message
     {
@@ -18,20 +13,16 @@ namespace rosbridgenet.Messages.Std
             get { return ROSMessageType; }
         }
 
-        [JsonIgnore]
-        [JsonPropertyName("r")]
+        [JsonProperty("r")]
         public float R { get; set; }
 
-        [JsonIgnore]
-        [JsonPropertyName("g")]
+        [JsonProperty("g")]
         public float G { get; set; }
 
-        [JsonIgnore]
-        [JsonPropertyName("b")]
+        [JsonProperty("b")]
         public float B { get; set; }
 
-        [JsonIgnore]
-        [JsonPropertyName("a")]
+        [JsonProperty("a")]
         public float A { get; set; }
 
         public ColorRGBA()

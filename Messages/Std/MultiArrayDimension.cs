@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
-namespace rosbridgenet.Messages.Std
+namespace Rosbridgenet.Messages.Std
 {
     public class MultiArrayDimension : Message
     {
@@ -18,16 +13,13 @@ namespace rosbridgenet.Messages.Std
             get { return ROSMessageType; }
         }
 
-        [JsonIgnore]
-        [JsonPropertyName("label")]
+        [JsonProperty("label")]
         public string Label { get; set; }
         
-        [JsonIgnore]
-        [JsonPropertyName("size")]
+        [JsonProperty("size")]
         public uint Size { get; set; }
         
-        [JsonIgnore]
-        [JsonPropertyName("stride")]
+        [JsonProperty("stride")]
         public uint Stride { get; set; }
 
         public MultiArrayDimension()

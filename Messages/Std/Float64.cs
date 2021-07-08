@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
-namespace rosbridgenet.Messages.Std
+namespace Rosbridgenet.Messages.Std
 {
     public class Float64 : Message
     {
@@ -18,13 +13,12 @@ namespace rosbridgenet.Messages.Std
             get { return ROSMessageType; }
         }
 
-        [JsonIgnore]
-        [JsonPropertyName("data")]
+        [JsonProperty("data")]
         public double Data { get; set; }
 
         public Float64()
         {
-            Data = 0f;
+            Data = 0d;
         }
 
         public Float64(double data)

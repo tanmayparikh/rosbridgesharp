@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
-namespace rosbridgenet.Messages.Std
+namespace Rosbridgenet.Messages.Std
 {
     public class MultiArrayLayout : Message
     {
@@ -18,12 +13,10 @@ namespace rosbridgenet.Messages.Std
             get { return ROSMessageType; }
         }
 
-        [JsonIgnore]
-        [JsonPropertyName("dim")]
+        [JsonProperty("dim")]
         public MultiArrayDimension[] Dim { get; set; }
 
-        [JsonIgnore]
-        [JsonPropertyName("data_offset")]
+        [JsonProperty("data_offset")]
         public uint DataOffset { get; set; }
 
         public MultiArrayLayout()

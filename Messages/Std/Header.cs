@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
-namespace rosbridgenet.Messages.Std
+namespace Rosbridgenet.Messages.Std
 {
     public class Header : Message
     {
@@ -18,16 +13,13 @@ namespace rosbridgenet.Messages.Std
             get { return ROSMessageType; }
         }
 
-        [JsonInclude]
-        [JsonPropertyName("seq")]
+        [JsonProperty("seq")]
         public uint SequenceId { get; set; }
 
-        [JsonInclude]
-        [JsonPropertyName("stamp")]
+        [JsonProperty("stamp")]
         public Time Stamp { get; set; }
 
-        [JsonInclude]
-        [JsonPropertyName("frame_id")]
+        [JsonProperty("frame_id")]
         public string FrameId { get; set; }
 
         public Header()
