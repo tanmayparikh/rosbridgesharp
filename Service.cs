@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System.Text.RegularExpressions;
 
 namespace Rosbridgenet
 {
@@ -45,8 +44,11 @@ namespace Rosbridgenet
 
         public override bool HandleServiceCallResponse(string jsonData)
         {
-            var serviceResponse =
-                JsonConvert.DeserializeObject<ServiceResponse>(Regex.Unescape(jsonData));
+            ServiceResponse serviceResponse = null;
+            //jsonData = jsonData.Replace(@"\n", "");
+
+            serviceResponse = JsonConvert.DeserializeObject<ServiceResponse>(jsonData);
+
             if (serviceResponse == null)
                 return false;
 

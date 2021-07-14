@@ -22,14 +22,14 @@ namespace Rosbridgenet
             Protocol.Connect();
         }
 
-        public void Subscribe<Tmsg>(Topic<Tmsg> topic) where Tmsg : Message
+        public void Subscribe<Tmsg>(Topic<Tmsg> topic, string type = "") where Tmsg : Message
         {
             if (topic == null)
                 throw new ArgumentNullException("Topic to subscribe to cannot be null");
 
             _subscribedTopics.Add(topic.Id, topic);
 
-            Protocol?.Send(topic.BuildSubscriptionMsg());
+            Protocol?.Send(topic.BuildSubscriptionMsg(type));
         }
 
         public void Unsubscribe<Tmsg>(Topic<Tmsg> topic) where Tmsg : Message
@@ -48,7 +48,12 @@ namespace Rosbridgenet
             if (service == null)
                 throw new ArgumentNullException("Service argument cannot be null");
 
-            var callId = Utils.GenerateRandomString();
+            string callId = "";
+            do
+            {
+                callId = Utils.GenerateRandomString();
+            }
+            while (_pendingServices.ContainsKey(callId));
             _pendingServices.Add(callId, service);
             
             Protocol?.Send(service.BuildServiceCallMsg(callId, args));
@@ -87,7 +92,8 @@ namespace Rosbridgenet
                         if (_pendingServices.ContainsKey(id))
                         {
                             var service = _pendingServices[id];
-                            service.HandleServiceCallResponse(receivedMsg);
+                            service?.HandleServiceCallResponse(receivedMsg);
+                            _pendingServices.Remove(id);
                         }
                         return;
                     }

@@ -1,5 +1,4 @@
-﻿using Rosbridgenet.Messages.Std;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Rosbridgenet.Messages.Geometry
 {

@@ -1,10 +1,5 @@
 ﻿using Newtonsoft.Json;
 using Rosbridgenet.Messages.Geometry;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Rosbridgenet.Messages.Tf2
 {

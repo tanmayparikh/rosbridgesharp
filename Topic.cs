@@ -38,9 +38,12 @@ namespace Rosbridgenet
             PulbicationHandler = publicationHandler;
         }
 
-        public string BuildSubscriptionMsg()
+        public string BuildSubscriptionMsg(string type = "")
         {
-            var subscription = new Subscription(Id, TopicName);
+            var subscription = new Subscription(Id, TopicName)
+            {
+                Type = type
+            };
             var serializerSettings = new JsonSerializerSettings { DefaultValueHandling = DefaultValueHandling.Ignore };
             return JsonConvert.SerializeObject(subscription, serializerSettings);
         }

@@ -100,6 +100,8 @@
     <Compile Include="RosBridge.cs" />
     <Compile Include="Service.cs" />
     <Compile Include="Services\RosApi\GetParamNamesResponse.cs" />
+    <Compile Include="Services\RosApi\ServicesResponse.cs" />
+    <Compile Include="Services\RosApi\SetParamRequest.cs" />
     <Compile Include="Services\RosApi\GetParamResponse.cs" />
     <Compile Include="Services\RosApi\GetParamRequest.cs" />
     <Compile Include="Services\RosApi\TopicsResponse.cs" />
